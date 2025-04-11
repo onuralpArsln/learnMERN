@@ -29,4 +29,4 @@ function findSubStr(st){
     return maxRun;
 }
 
-console.log(findSubStr(st1))
+console.log(findSubStr(st2))
