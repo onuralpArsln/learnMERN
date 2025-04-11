@@ -29,3 +29,7 @@ console.log(greet('John'));
 
 const person1 = new Person('Alice', 30);
 person1.introduce();
+
+// npm install -g typescript
+// tsc .\tsbasics.ts
+//  node .\tsbasics.js
