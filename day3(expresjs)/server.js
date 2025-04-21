@@ -10,13 +10,13 @@ app.get('/api/selam', (req, res) => {
 // URL parametre alma başında : ile parametre oldugunu belirt
 app.get('/api/selam/:isim', (req, res) => {
     const isim = req.params.isim;
-    res.json({ mesaj: `Selam, ${isim}!` }); // ${isim} ile urlden çek 
+    res.json({ mesaj: `Selam, ${isim}!` }); // ${isim} ile değişkenden çek 
 });
 // http://localhost:3000/api/selam/Alp
 
 
 //Query  youtube tarzı 
-app.get('/api/selam', (req, res) => {
+app.get('/api/selam2', (req, res) => {
     const isim = req.query.isim;
     res.json({ mesaj: `Selam, ${isim}!` });
 });
