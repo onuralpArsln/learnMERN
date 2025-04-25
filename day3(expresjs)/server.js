@@ -48,6 +48,18 @@ app.get('/second', (req, res) => {
     res.sendFile(__dirname + '/second.html');
 });
 
+app.get('/api/faktoriyel', (req,res) =>{
+    const sayi = parseInt(req.query.sayi);
+    let fak = 1;
+
+    for (let i=1; i<=sayi ; i++){
+        fak  = fak*i; 
+    }
+
+    const sayi10 = fak;
+    res.json({sayi : sayi10 });
+});
+
 // Sunucuyu başlat
 app.listen(PORT, () => {
     console.log(`Sunucu çalışıyor http://localhost:${PORT}`);
