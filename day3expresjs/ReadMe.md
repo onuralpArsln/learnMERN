@@ -2,7 +2,7 @@
 
 Yapılan yüklemeleri takip etmek için 
 > npm init -y
-Böylece `npm run dev` ile çalıştırma `npm install` ile package.jsonda hızlı kurulmuna olanak verir
+Böylece `npm start` ile çalıştırma `npm install` ile package.jsonda hızlı kurulmuna olanak verir
 
 # Yüklemeler
 
