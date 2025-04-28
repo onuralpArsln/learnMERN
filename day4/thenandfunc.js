@@ -9,8 +9,8 @@ normalFonksiyon();
 
 const myPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Promise başarıyla tamamlandı!");
-    }, 1000); // 1 saniye bekle
+        reject("Promise başarıyla tamamlandı!");
+    }, 1); // 1 saniye bekle
 });
 
 myPromise
