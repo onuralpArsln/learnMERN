@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;  // deployda çalışsıon diye
+const PORT = process.env.PORT || 3000;  // deployda çalışsın diye
 
 //  Basit bir API endpoint
 app.get('/api/selam', (req, res) => {
@@ -48,16 +48,16 @@ app.get('/second', (req, res) => {
     res.sendFile(__dirname + '/second.html');
 });
 
-app.get('/api/faktoriyel', (req,res) =>{
+app.get('/api/faktoriyel', (req, res) => {
     const sayi = parseInt(req.query.sayi);
     let fak = 1;
 
-    for (let i=1; i<=sayi ; i++){
-        fak  = fak*i; 
+    for (let i = 1; i <= sayi; i++) {
+        fak = fak * i;
     }
 
     const sayi10 = fak;
-    res.json({sayi : sayi10 });
+    res.json({ sayi: sayi10 });
 });
 
 // Sunucuyu başlat
