@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .control-section {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .color-box,
+        .size-box {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 2px solid black;
+            display: inline-block;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .color-box.black {
+            background-color: black;
+        }
+
+        .size-box.large {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader"></div>
+    <div id="message">
+        Merhaba Web
+
+        <div class="control-section">
+            <div>
+                <button id="colorBtn">Renk Değiştir</button>
+                <div id="colorBox" class="color-box"></div>
+            </div>
+            <div>
+                <button id="sizeBtn">Boyut Değiştir (2sn)</button>
+                <div id="sizeBox" class="size-box"></div>
+
+            </div>
+            <div>
+                <button id="sizeBtn2">Boyut Değiştir (2sn)</button>
+                <div id="sizeBox2" class="size-box"></div>
+                <div id="countdownDisplay"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Loading sonrası mesajı göster
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none'; // sadece görünmez yapma aç kapa içim
+            document.getElementById('loader').remove(); // tamamen yok etme animasyon güç yemesin diye
+
+            document.getElementById('message').style.display = 'block';
+        }, 2000);
+
+        // Renk değiştirme için
+        document.getElementById('colorBtn').addEventListener('click', () => {
+            const box = document.getElementById('colorBox');
+            box.classList.toggle('black'); // class ekleyip çıkartma
+        });
+
+        // Boyut değiştirme (2sn sonra)
+        document.getElementById('sizeBtn').addEventListener('click', () => {
+            const box = document.getElementById('sizeBox');
+            setTimeout(() => {
+                box.classList.toggle('large');
+            }, 2000);
+        });
+        // Boyut değiştirme Sayaçlı
+        document.getElementById('sizeBtn2').addEventListener('click', () => {
+            const box = document.getElementById('sizeBox2');
+            const countdownEl = document.getElementById('countdownDisplay');
+
+            let countdown = 2;
+            countdownEl.textContent = countdown;
+
+            const interval = setInterval(() => {
+                countdown--;
+                countdownEl.textContent = countdown;
+
+                if (countdown === 0) {
+                    clearInterval(interval);
+                    countdownEl.textContent = ''; // Sayaç yazısını sil
+                    box.classList.toggle('large'); // Boyutu değiştir
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
