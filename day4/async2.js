@@ -2,15 +2,15 @@ async function myAsyncFunction() {
     return new Promise(async (resolve, reject) => {
         setTimeout(() => {
             reject("1ms timeout içinden reject geldi");
-        }, 10000);
+        }, 10);
 
         let a = 1;
-        const chunkSize = 10000; // Her chunk'ta işlenecek iterasyon sayısı
+        const chunkSize = 10000; // işlem grupları
 
         for (let i = 1; i < 1000000; i++) {
             a = a * i;
 
-            // Her chunk sonunda event loop'a nefes alma fırsatı ver
+            // işlem grubu arasında loopa izin ver
             if (i % chunkSize === 0) {
                 await new Promise(r => setTimeout(r, 0));
             }

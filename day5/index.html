@@ -48,11 +48,18 @@
         .size-box {
             width: 100px;
             height: 100px;
+
             background-color: white;
             border: 2px solid black;
             display: inline-block;
             margin-left: 10px;
             transition: all 0.3s ease;
+        }
+
+        .size-box:hover {
+            width: 50px;
+            height: 50px;
+
         }
 
         .color-box.black {
@@ -117,7 +124,7 @@
             const countdownEl = document.getElementById('countdownDisplay');
 
             let countdown = 2;
-            countdownEl.textContent = countdown;
+            countdownEl.textContent = countdown; // textContent js html yapısı içinde var olan bir özellik div içindeki yazıdır
 
             const interval = setInterval(() => {
                 countdown--;
