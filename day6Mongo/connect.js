@@ -81,6 +81,7 @@ async function remove() {
 
         const result = await collection.deleteOne({ name: "Bob" });
         console.log(`${result.deletedCount} document(s) deleted`);
+        console.log(`${result.acknowledged} document(s) deleted`);
     } finally {
         await client.close();
     }
