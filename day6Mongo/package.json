@@ -1,0 +1,16 @@
+{
+  "name": "day6mongo",
+  "version": "1.0.0",
+  "description": "npm install mongodb\r npm install dotenv\r echo day6Mongo/.env >> .gitignore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "mongodb": "^6.16.0"
+  }
+}
