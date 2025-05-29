@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - Token Al</title>
+</head>
+
+<body>
+    <h1>Token Al</h1>
+    <button onclick="getToken()">Token Al</button>
+    <p id="token"></p>
+    <a href="/secret"> öbür sayfaya link</a>
+    <script>
+        function getToken() {
+            fetch('/api/login', { method: 'POST' })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('token').innerText = data.token;
+                    localStorage.setItem('token', data.token);
+                });
+        }
+    </script>
+</body>
+
+</html>
